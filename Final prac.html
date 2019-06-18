@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #wrapper {
+                margin: auto;
+                width: 760px;
+                display: block;
+                background-color: #E2E4D6;
+            }
+            #header {
+                background-image: url('logo.png');
+                background-position: right;
+                background-repeat: no-repeat;
+                height: 100px;
+                width: 760px;                
+            }
+            
+            #formbody h1
+            {
+             text-align: center;   
+            }         
+            
+            #vacation {
+                padding: 0 50px;
+                
+            }  
+
+            .error
+            {
+                color: red;
+                font-style: italic;
+                font-size: 10px;
+                visibility: hidden;
+            }         
+            
+        </style>
+        
+    </head>
+    <body>
+        <div id="wrapper">
+            
+            <div id="header">
+                
+            </div>
+            
+            <div id="formbody">
+                <h1>Faculty Vacation Request Form</h1>
+                <form id="vacation" name="vacation">                   
+                       
+                        Employee ID*: <input type="text" name="id"/>
+                        <span id="error0" class="error" >This is required</span>                        
+                        <br/>
+                        Faculty Name*: <input type="text" name="fname"/>
+                        <span class="error" id="error1">This is required</span>
+                        <br/>
+                        Gender*: <input type="radio" name="gender" value="Male"/>Male
+                        <input type="radio" name="gender" value="Female"/>Female
+                        <span  id="error3" class="error">This is required</span>                        
+                        <br/>
+                        Nationality: <input type="text" name="nation"/>
+                        <br/>
+                        Position*:
+                        <select name="position">
+                            <option value="default"></option>
+                            <option value="Lec">Lecturer</option>
+                            <option value="Asst">Assistant Professor</option>
+                            <option value="Assoc">Associate Professor</option>
+                            <option value="Prof">Professor</option>
+                        </select>
+                        <span id="errorpos" class="error">This is required</span>
+                        <br/>
+                        <input type="button" value="Submit" onclick="validate();"/>              
+                    
+                </form>
+            </div> 
+                      
+            
+        </div>
+        <script>
+            
+            function validate()
+            {   
+              
+                var errID = document.getElementById("error0");
+                var id = document.vacation.id;
+                if(id.value === "")
+                    {
+                        errID.style.visibility="visible";
+                    }
+                
+                
+               var nem = document.getElementById("error1");
+               var name = document.vacation.fname;
+                if(name.value === "")
+                    {
+                        nem.style.visibility="visible";
+                    }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            }
+
+        </script>
+    </body>
+</html>

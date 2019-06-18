@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    
+    
+</head>
+<body>
+   
+   <h1>Pizza Order Form</h1>
+    <form name="order">
+        <table>
+            <tr>
+                <td>Pizza Size</td>
+                <td>
+                    <input type="radio" name="size" value="10">Small
+                    <input type="radio" name="size" value="20">Medium
+                    <input type="radio" name="size" value="30">Large
+                </td>
+            </tr>
+            <tr>
+                <td>Toppings</td>
+                <td>
+                    <input type="checkbox" name="top" value="10">Pepperoni
+                    <input type="checkbox" name="top" value="10">Chicken Tikka
+                    <input type="checkbox" name="top" value="10">Philly Steak
+                    <input type="checkbox" name="top" value="10">Chicken Steak
+                    <br/>
+                    <input type="checkbox" name="top" value="2">Mushrooms
+                    <input type="checkbox" name="top" value="3">Black Olives
+                    <input type="checkbox" name="top" value="5">Jalapeno
+                    <input type="checkbox" name="top" value="5">Relish
+                    <br/>
+                    <input type="checkbox" name="top" value="3">Extra Sauce
+                    <input type="checkbox" name="top" value="6">Extra Spice
+                    <input type="checkbox" name="top" value="10">Thick Crust
+                    <input type="checkbox" name="top" value="2">Super Thin
+                    <br/>
+                    <input type="checkbox" name="top" value="5">Mozarella
+                    <input type="checkbox" name="top" value="6">Swiss
+                    <input type="checkbox" name="top" value="2">Cheddar
+                    <input type="checkbox" name="top" value="1">Labneh
+                    <br/>
+                    <input type="checkbox" name="top" value="4">Italian Seasoning
+                    <input type="checkbox" name="top" value="3">Spanish Seasoning
+                    <input type="checkbox" name="top" value="3">Indian Seasoning
+                    <input type="checkbox" name="top" value="3">Kabsa Seasoning
+                    <br/>                    
+                </td>
+            </tr>
+            <tr>
+                <td>Delivery Option</td>
+                <td>
+                    <select name="delivery">
+                        <option value="0">Pick-up</option>
+                        <option value="5">Delivery - Khaldiyyah</option>
+                        <option value="10">Delivery - Haradh</option>
+                        <option value="15">Delivery - Mahasin</option>
+                        <option value="30">Delivery - Mubarraz</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" onclick="pizzapie();" value="Calculate"></td>
+            </tr>
+            <tr>
+              <td colspan="2"><textarea name="output" rows="5" cols="50"></textarea></td>
+            </tr>
+        </table>
+    </form>
+   
+   <script>
+       
+       function pizzapie()
+       {
+          
+           var sum = 0;
+           var sumo= 0;
+           var check = (document.order.size.value*1);
+           var del = (document.order.delivery.value*1);
+           var index = document.order.delivery.selectedIndex;
+           var indexval = document.order.delivery[index].textContent;
+           var selectedtop = document.order.top;
+           
+           
+           for(var i in selectedtop)
+               
+               {
+                   if(selectedtop [i].checked)
+                       
+                       {
+                           sum += (selectedtop[i].value*1);
+                           
+                       }
+                   
+               }
+           
+           sumo = sum+check+del;
+           
+           var text = document.order.output.value = "Your total order is SAR " +sumo+ " and it will be delivered to you at " +indexval;
+           
+       }
+       
+       
+       
+    </script>   
+   
+   
+   
+</body>
+</html>

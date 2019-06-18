@@ -1,0 +1,44 @@
+<!--
+JavaScript Class Exercise - 1
+
+Task: For each button press, change the color of the body background according to the ID of the button
+
+HINT: Use “document.body” to select the body Element
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Event Handling</title>
+</head>
+<body>   
+    <button id="green" style="color: green">Green</button>
+    <button id="red" style="color: red">Red</button>
+    <button id="blue" style="color: blue">Blue</button>
+    <script>
+    
+        
+        var grn = document.getElementById("green");
+        grn.addEventListener("click", function(){
+           
+            document.body.style.backgroundColor="green";
+            
+        });
+        
+        
+        var red = document.getElementById("red");
+        red.addEventListener("click" , function() {
+            
+           document.body.style.backgroundColor="red"; 
+        });
+        
+        var blu = document.getElementById("blue");
+        blu.addEventListener("click" , function() {
+            
+           document.body.style.backgroundColor="blue"; 
+        });
+        
+    </script>
+</body>
+</html>
